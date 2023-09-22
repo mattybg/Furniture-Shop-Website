@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Oakie Doakie Furniture </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" /> 
+    </head>
+    <body>
+        <header>
+            <section id="banner">
+                <h2>Welcome to Oakie Doakie's Digital Ordering Portal</h2>
+                <h5>Ireland's most trusted international furniture dealer 2023</h5>
+            </section>
+            <nav>
+            <p><a href="{{ url_for('index') }}">Home</a></p>
+            {% if g.user %}
+                <p>User id: {{ g.user }}</p>
+                <p><a href="{{ url_for('logout') }}">Logout</a></p>
+                <p><a href="{{ url_for('myaccount') }}">My Account</a></p>
+                    {% if g.admin %} 
+                        <p><a href="{{ url_for('admin') }}">Admin Hub</a></p>
+                        <p>
+                            <a href="{{ url_for('add_product') }}">Add new Products</a>
+                        </p>
+                    {% endif %}
+
+            {% else %}
+                <p><a href="{{ url_for('register') }}">Register</a></p> 
+                <p><a href="{{ url_for('login') }}">Login</a></p> 
+            {% endif %}
+        </nav>
+        </header>
+
+
+        {% block main_content %}{% endblock %}
+
+        </body>
+
+</html>

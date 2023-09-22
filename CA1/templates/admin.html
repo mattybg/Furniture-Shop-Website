@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+<h1>Admin Hub</h1>
+
+{% if orders %}
+    <h2>Orders</h2>
+    <ul>
+    {% for order in orders %}
+        <li>
+            <p>Order ID: {{ order.order_id }}</p>
+            <p>Total Price: €{{ order.total_price }}</p>
+            <p>Customer ID: {{ order.user_id }}</p>   
+            <p>Status: {{ order.status }}</p>
+            <ul>
+            {% for item in order.items %}
+                <li>{{ item.quantity }} * {{ item.name }} - {{ item.price }}</li>
+            {% endfor %}
+            </ul>
+            <br>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>There are no orders :/ </p>
+{% endif %}
+
+
+    {% endblock %}.

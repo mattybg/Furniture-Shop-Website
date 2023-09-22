@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>Add a new product</h1>
+
+<form action="{{ url_for('del_product') }}" method="POST" novalidate>
+    {{ form.hidden_tag() }} 
+    {{ form.name.label }} 
+    {{ form.name() }}
+    {% for error in form.name.errors %}
+        {{ error }}</p>
+    {% endfor %} 
+    <br />
+    {{ form.submit() }}
+</form>
+
+<p>{{ message }}</p>
+
+{% endblock %}

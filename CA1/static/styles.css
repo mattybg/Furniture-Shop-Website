@@ -1,0 +1,56 @@
+/* style from my first ca */
+
+:root {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    --secondary-colour: #14213d ;
+    --third-color: #fca311;
+    --new-main:#00A86B;
+    --lighter-blue: #18286b;
+    background-color: var(--new-main);
+    color: white;
+   }
+    
+    
+   html {
+   scroll-behavior: smooth;
+   text-align: center;
+   margin: 0 auto;
+   }
+    
+    
+   h1, h2, caption, nav > ul > li{
+   text-transform: uppercase;
+   letter-spacing: .2rem;
+   padding-top: .5rem;
+   text-align: center;
+   }
+    
+   header {
+   overflow: hidden;
+   display: block;
+   text-align: center;
+   margin: .5rem;
+   }
+
+table, form{
+    border-collapse: collapse;
+    text-align: center;
+    padding: 4px;
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 1.25rem;
+    background-color: var(--secondary-colour);
+}
+
+header #banner{
+    background-color: var(--secondary-colour);
+    padding: 2rem;
+}
+
+li {
+    list-style: none;
+}

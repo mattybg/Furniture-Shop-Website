@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+<h1>My Account</h1>
+
+{% if orders %}
+    <h2>Your Past Orders</h2>
+    <ul>
+    {% for order in orders %}
+        <li>
+            <p>Order ID: {{ order.order_id }}</p>
+            <p>Total Price: €{{ order.total_price }}</p>
+            <p>Status: Processing</p>
+            <ul>
+            {% for item in order.items %}
+                <li>{{ item.quantity }} * {{ item.name }} - {{ item.price }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You have no past orders.</p>
+
+{% endif %}
+<p> 
+    <a href="{{ url_for('products') }}">Go back to shop</a>
+</p>
+{% endblock %}
