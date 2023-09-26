@@ -1,4 +1,4 @@
-# webdev_ca_1st.2
+# Furniture-Shop-Website
 
 Another Web Development project countung towards my continuous assesment mark in that module.
 
